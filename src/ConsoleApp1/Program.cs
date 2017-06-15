@@ -17,6 +17,23 @@ namespace Deck
             Suit = suit;
             Name = value + " of " + suit;
         }
+        public override bool Equals(System.Object otherCard)
+        {
+            if (!(otherCard is Card))
+            {
+                return false;
+            }
+            else
+            {
+                Card newCard = (Card)otherCard;
+                return this.Name.Equals(newCard.Name);
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return this.Name.GetHashCode();
+        }
     }
 
     public class Deck : List<Card>
@@ -38,35 +55,7 @@ namespace Deck
             }
             return thisDeck;
         }
-    }
-
-    class Program
-    {
-
-        static void Main(string[] args)
-        {
-            var orderedDeck = new Deck().OrderedDeck();
-            var shuffledDeck = ShuffledDeck();
-            Console.WriteLine("Get a free Deck of Cards! 1: Type 1 for ordered Deck. 2: Type 2 for shuffled deck");
-            string deckChoice = Console.ReadLine();
-            if (deckChoice == "1")
-            {
-                orderedDeck.Select(x => x.Name).ToList().ForEach(Console.WriteLine);
-
-            }
-            else if (deckChoice == "2")
-            {
-                shuffledDeck.Select(x => x.Name).ToList().ForEach(Console.WriteLine);
-            }
-            else
-            {
-                Console.WriteLine("You only get a deck if you follow instructions...");
-            }
-            Console.ReadLine();
-        }
-        
-
-        static List<Card> ShuffledDeck()
+        public List<Card> ShuffledDeck()
         {
             var thisDeck = new Deck().OrderedDeck();
             var rand = new Random();
@@ -79,5 +68,37 @@ namespace Deck
             }
             return thisDeck;
         }
+    }
+
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            var orderedDeck = new Deck().OrderedDeck();
+            string deckChoice = "";
+            do
+            {
+                Console.WriteLine("Get a free Deck of Cards! 1: Type 1 for ordered Deck. 2: Type 2 for shuffled deck. x: Type x to exit.");
+                deckChoice = Console.ReadLine();
+                if (deckChoice == "1")
+                {
+                    orderedDeck.Select(x => x.Name).ToList().ForEach(Console.WriteLine);
+
+                }
+                else if (deckChoice == "2")
+                {
+                    var shuffledDeck = new Deck().ShuffledDeck();
+                    shuffledDeck.Select(x => x.Name).ToList().ForEach(Console.WriteLine);
+                }
+                else if(deckChoice != "x")
+                {
+                    Console.WriteLine("Incorrect Entry, Please Try Again.");
+                }
+            } while (deckChoice != "x");
+        }
+        
+
+        
     }
 }
