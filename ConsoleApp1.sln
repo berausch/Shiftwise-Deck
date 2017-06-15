@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1D85C3EE-2F36-41A1-8829-1B07C021E82E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{95CD940D-6172-4B78-8236-5081231AE9FC}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Deck", "src\ConsoleApp1\Deck.xproj", "{4094B0E5-6D6D-4678-A2E0-7BA7DC5DBB03}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A75329DF-DD1C-46F8-B672-87058560798E}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Deck.Tests", "Deck.tests\Deck.Tests.xproj", "{11853B8F-FDF0-43AA-9302-A54CB3BD2329}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4094B0E5-6D6D-4678-A2E0-7BA7DC5DBB03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4094B0E5-6D6D-4678-A2E0-7BA7DC5DBB03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4094B0E5-6D6D-4678-A2E0-7BA7DC5DBB03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4094B0E5-6D6D-4678-A2E0-7BA7DC5DBB03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11853B8F-FDF0-43AA-9302-A54CB3BD2329}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11853B8F-FDF0-43AA-9302-A54CB3BD2329}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11853B8F-FDF0-43AA-9302-A54CB3BD2329}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11853B8F-FDF0-43AA-9302-A54CB3BD2329}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4094B0E5-6D6D-4678-A2E0-7BA7DC5DBB03} = {1D85C3EE-2F36-41A1-8829-1B07C021E82E}
+		{11853B8F-FDF0-43AA-9302-A54CB3BD2329} = {A75329DF-DD1C-46F8-B672-87058560798E}
+	EndGlobalSection
+EndGlobal
